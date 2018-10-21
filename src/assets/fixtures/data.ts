@@ -41,61 +41,61 @@ const widgetData: WidgetModel[] = [
     type: 'hotels'
   },
   {
-    img: '',
-    address: '',
-    phone:  0,
+    img: 'go_fishing',
+    address: 'о. Рыбное',
+    phone:  123456789,
     country_code: 1,
     weather: {
-      title: '',
-      icon: '',
-      water: 0,
-      temperature: 0
+      title: 'Don\'t forget raincoat',
+      icon: 'rainy',
+      water: 14,
+      temperature: 18
     },
     social_info: {
-      title: '',
-      img: '',
+      title: 'Only for men',
+      img: 'go_fishing',
       followers: 1000,
       following: 999
     },
     type: 'fishing'
   },
   {
-    img: '',
-    address: '',
-    phone:  0,
-    country_code: 1,
+    img: 'tui',
+    address: 'TUI;г.Киев,;ул. Трехсвятительская, 5/1',
+    phone:  80986071482,
+    country_code: 38,
     weather: {
-      title: '',
-      icon: '',
-      water: 0,
-      temperature: 0
+      title: 'Go to bed',
+      icon: 'night',
+      water: 10,
+      temperature: 28
     },
     social_info: {
-      title: '',
-      img: '',
-      followers: 34,
+      title: 'Tours for babushkas',
+      img: 'tui',
+      followers: 1,
       following: 1024
     },
     type: 'tours'
   },
   {
-    img: '',
-    address: '',
-    phone:  0,
-    country_code: 1,
+    img: 'joinup',
+    address: 'Join UP!;01033, г.Киев,;ул. Жилянская, 55',
+    phone:  80986071482,
+    country_code: 38,
     weather: {
-      title: '',
-      icon: '',
-      water: 0,
-      temperature: 0
+      title: 'Time to sleep',
+      icon: 'night',
+      water: 9,
+      temperature: 27
     },
     social_info: {
-      title: '',
-      img: '',
-      followers: 204,
-      following: 1000
+      title: 'Tours for dedushkas',
+      img: 'joinup',
+      followers: 3,
+      following: 1024
     },
-    type: 'weather'
+    type: 'tours'
   }
 ];
 

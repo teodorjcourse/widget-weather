@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { widgetData$ } from '../../../assets/fixtures/data';
 import { WidgetModel } from '../../models/widget.model';
 import { groupBy } from '../../rxjs-operators/groupBy';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,7 +17,14 @@ export class WidgetComponent implements OnInit {
 
   ngOnInit() {
     this.dataStream$ = widgetData$.pipe(
-      groupBy('type')
+      groupBy('type'),
+      map((res: { [key: string]: WidgetModel[] }) => {
+        res['all'] = Object.keys(res).reduce((acc: WidgetModel[], key: string) => {
+          return [...acc, ...res[key]];
+        }, []);
+
+        return res;
+      })
     );
   }
 
