@@ -27,7 +27,7 @@
             <ng-container *ngFor = "let addressLine of activity.address.split(';')">
               <p>{{ addressLine }}</p>
             </ng-container>
-            <h6>Tel: +{{ activity.phone }}</h6>
+            <h6>Tel: {{ activity.phone | phone:activity.country_code }}</h6>
           </div>
 
           <div class="activity-img">

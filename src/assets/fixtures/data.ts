@@ -5,8 +5,8 @@ const widgetData: WidgetModel[] = [
   {
     img: 'aguamarina',
     address: 'BQ Aguamarina Boutique;Sant Antoni de la Platja,;41, Can Pastilla, Spain',
-    phone:  902570647,
-    country_code: 0,
+    phone:  '9025706477',
+    country_code: 34,
     weather: {
       title: 'Sunny bolearic islands',
       icon: 'sunny',
@@ -24,8 +24,8 @@ const widgetData: WidgetModel[] = [
   {
     img: 'railay',
     address: 'Railay Village Resort;544 Moo 2, Ao Nang Muang,;81000 Railay Beach, Thailand',
-    phone:  303386112,
-    country_code: 0,
+    phone:  '3033861123',
+    country_code: 66,
     weather: {
       title: 'Do not forget the sunscreen',
       icon: 'sunny',
@@ -43,7 +43,7 @@ const widgetData: WidgetModel[] = [
   {
     img: 'go_fishing',
     address: 'о. Рыбное',
-    phone:  123456789,
+    phone:  '1234567894',
     country_code: 1,
     weather: {
       title: 'Don\'t forget raincoat',
@@ -62,7 +62,7 @@ const widgetData: WidgetModel[] = [
   {
     img: 'tui',
     address: 'TUI;г.Киев,;ул. Трехсвятительская, 5/1',
-    phone:  80986071482,
+    phone:  '0986071482',
     country_code: 38,
     weather: {
       title: 'Go to bed',
@@ -81,7 +81,7 @@ const widgetData: WidgetModel[] = [
   {
     img: 'joinup',
     address: 'Join UP!;01033, г.Киев,;ул. Жилянская, 55',
-    phone:  80986071482,
+    phone:  '0986071482',
     country_code: 38,
     weather: {
       title: 'Time to sleep',

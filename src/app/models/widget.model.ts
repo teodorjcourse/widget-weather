@@ -16,7 +16,7 @@ export class WidgetModel {
   public type: string;
   public img: string;
   public address: string;
-  public phone:  number;
+  public phone:  string;
   public country_code: number;
 
   public weather: Weather;

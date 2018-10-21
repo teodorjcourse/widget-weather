@@ -9,6 +9,7 @@ import { ContainerComponent } from './components/widget/container/container.comp
 
 import { KeysPipe } from './pipes/keys.pipe';
 import { FilterActivityPipe } from './pipes/filter-activity.pipe';
+import { PhonePipe } from './pipes/phone.pipe';
 
 const components = [
   WidgetComponent,
@@ -19,7 +20,8 @@ const components = [
 
 const pipes = [
   KeysPipe,
-  FilterActivityPipe
+  FilterActivityPipe,
+  PhonePipe
 ];
 
 @NgModule({
