@@ -1,0 +1,55 @@
+<div class="element-bg-img">
+  <img [src]="'../../../../assets/images/widget/' + selectedCategory + '.png'" alt="" class="img-responsive">
+</div>
+
+<div class="element-left-bottom">
+  <div class="ele-strip">
+    <ul>
+      <ng-container *ngFor = "let category of widgetData | keys; last as isLast">
+        <li [ngClass] = "{ 'anc-bor': isLast }">
+          <a href="javascript:void(0)" (click) = "onSelectCategory(category)">{{ category }}</a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+
+  <div class="village">
+    <h3>Righteous indignation & like</h3>
+
+    <span class="line"></span>
+
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2">
+        <div *ngFor="let activity of widgetData | filterActivity:selectedCategory" class="activity-row" (click) = "onSelectActivity(activity)">
+
+          <div class="activity-desc">
+            <h5>Address:</h5>
+            <ng-container *ngFor = "let addressLine of activity.address.split(';')">
+              <p>{{ addressLine }}</p>
+            </ng-container>
+            <h6>Tel: +{{ activity.phone }}</h6>
+          </div>
+
+          <div class="activity-img">
+            <ul>
+              <li>
+                <img
+                  [src]="'../../../../assets/images/widget/' + activity.img + '_res.png'"
+                  alt=""
+                  onerror="this.src = '../../../../assets/images/widget/res.jpg'" />
+              </li>
+              <li>
+                <img
+                  [src]="'../../../../assets/images/widget/' + activity.img + '_r1.png'"
+                  alt=""
+                  onerror="this.src = '../../../../assets/images/widget/r1.jpg'" />
+              </li>
+            </ul>
+          </div>
+
+          <div class="clear"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

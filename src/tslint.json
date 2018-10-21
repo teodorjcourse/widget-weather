@@ -12,6 +12,7 @@
             "element",
             "teo",
             "kebab-case"
-        ]
+        ],
+      "no-inferrable-types": [false]
     }
 }

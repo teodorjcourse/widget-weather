@@ -1,0 +1,12 @@
+<div class="element">
+  <div class="element-left">
+    <teo-container [widgetDataStream] = "widgetData$" (selectActivity) = "selectedActivity = $event"></teo-container>
+  </div>
+
+  <div class="element-right">
+    <teo-weather [weather] = "selectedActivity.weather"></teo-weather>
+    <teo-social [info] = "selectedActivity.social_info"></teo-social>
+  </div>
+
+  <div class="clear"> </div>
+</div>
