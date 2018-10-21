@@ -10,17 +10,19 @@ import { ContainerComponent } from './components/widget/container/container.comp
 import { KeysPipe } from './pipes/keys.pipe';
 import { FilterActivityPipe } from './pipes/filter-activity.pipe';
 import { PhonePipe } from './pipes/phone.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 const components = [
+  ContainerComponent,
+  SocialInfoComponent,
   WidgetComponent,
   WeatherComponent,
-  SocialInfoComponent,
-  ContainerComponent
 ];
 
 const pipes = [
-  KeysPipe,
+  CapitalizePipe,
   FilterActivityPipe,
+  KeysPipe,
   PhonePipe
 ];
 

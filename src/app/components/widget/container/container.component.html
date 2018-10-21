@@ -7,7 +7,7 @@
     <ul>
       <ng-container *ngFor = "let category of widgetData | keys; last as isLast">
         <li [ngClass] = "{ 'anc-bor': isLast }">
-          <a href="javascript:void(0)" (click) = "onSelectCategory(category)">{{ category }}</a>
+          <a href="javascript:void(0)" (click) = "onSelectCategory(category)">{{ category | capitalize }}</a>
         </li>
       </ng-container>
     </ul>

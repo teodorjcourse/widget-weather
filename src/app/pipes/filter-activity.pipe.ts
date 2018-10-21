@@ -6,7 +6,7 @@ import {WidgetModel} from '../models/widget.model';
 })
 export class FilterActivityPipe implements PipeTransform {
 
-  transform(widgetData: WidgetModel, category: string): any {
+  transform(widgetData: WidgetModel, category: string): WidgetModel[] {
     return widgetData[category];
   }
 }
