@@ -55,6 +55,10 @@ h1 {
   width: 40%;
   margin: 0 auto 7em;
 }
+.center {
+  margin: auto;
+  width: 50%;
+}
 .ele-strip {
   background: #fda660;
   padding: 1em 1em;

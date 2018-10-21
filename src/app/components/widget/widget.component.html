@@ -1,12 +1,20 @@
 <div class="element">
-  <div class="element-left">
-    <teo-container [widgetDataStream] = "widgetData$" (selectActivity) = "selectedActivity = $event"></teo-container>
+  <h1>Hot Weather Widget</h1>
+
+  <div class="center" *ngIf="isLoading; else showContent">
+    <img  src="../../../assets/images/loading.png">
   </div>
 
-  <div class="element-right">
-    <teo-weather [weather] = "selectedActivity.weather"></teo-weather>
-    <teo-social [info] = "selectedActivity.social_info"></teo-social>
-  </div>
+  <ng-template #showContent>
+    <div class="element-left">
+      <teo-container [widgetData] = "widgetData" (selectActivity) = "selectedActivity = $event"></teo-container>
+    </div>
+
+    <div class="element-right">
+      <teo-weather [weather] = "selectedActivity.weather"></teo-weather>
+      <teo-social [info] = "selectedActivity.social_info"></teo-social>
+    </div>
+  </ng-template>
 
   <div class="clear"> </div>
 </div>

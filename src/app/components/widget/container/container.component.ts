@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { WidgetModel } from '../../../models/widget.model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'teo-container',
@@ -8,22 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class ContainerComponent implements OnInit {
   @Input()
-  public widgetDataStream: Observable<{ [key: string]: WidgetModel[] }>;
+  public widgetData: { [key: string]: WidgetModel[] };
   @Output()
   public selectActivity: EventEmitter<WidgetModel> = new EventEmitter();
-
-  public widgetData: { [key: string]: WidgetModel[] };
   public selectedCategory: string;
 
   constructor() { }
 
   public ngOnInit(): void {
-    this.widgetDataStream.subscribe(
-      (data: { [key: string]: WidgetModel[] }) => {
-        this.widgetData = data;
-        this.setCategory(Object.keys(data)[0]);
-      }
-    );
+    this.setCategory(Object.keys(this.widgetData)[0]);
   }
 
   public onSelectCategory(category: string): void {
