@@ -37,5 +37,13 @@ export class ContainerComponent implements OnInit {
   private setCategory(category: string): void {
     this.selectedCategory = category;
     this.onSelectActivity(this.widgetData[category][0]);
+    this.scrollToTop();
+  }
+
+  private scrollToTop(): void {
+    const scrollContainer: Element = document.getElementsByClassName('scrollbar')[0];
+    if (scrollContainer) {
+      scrollContainer.scrollTop = 0;
+    }
   }
 }
