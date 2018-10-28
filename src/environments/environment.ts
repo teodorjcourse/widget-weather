@@ -2,6 +2,9 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+export const BASE_URL = 'http://localhost:3010';
+export const API_ENDPOINT = `${BASE_URL}/api/widget/media`
+
 export const environment = {
   production: false
 };

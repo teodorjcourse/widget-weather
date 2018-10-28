@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { widgetData$ } from '../../../assets/fixtures/data';
 import { WidgetModel } from '../../models/widget.model';
-import { groupBy } from '../../rxjs-operators/groupBy';
-import { tap, delay, map } from 'rxjs/operators';
+import { WidgetService } from '../../common/services/widget.service';
 
 @Component({
   selector: 'teo-widget',
@@ -13,20 +11,15 @@ export class WidgetComponent implements OnInit {
   public selectedActivity: WidgetModel;
   public isLoading: boolean = true;
 
-  constructor() { }
+  constructor(
+    private _widgetService: WidgetService
+  ) { }
 
   ngOnInit() {
-    widgetData$.pipe(
-      delay(1500),
-      tap( _ => this.isLoading = false),
-      groupBy('type'),
-      map((res: { [key: string]: WidgetModel[] }) => {
-        res['all'] = Object.keys(res).reduce((acc: WidgetModel[], key: string) => {
-          return [...acc, ...res[key]];
-        }, []);
-
-        return res;
-      })
-      ).subscribe((data: { [key: string]: WidgetModel[] }) =>  this.widgetData = data );
+    this._widgetService.get().subscribe(
+      (data: { [key: string]: WidgetModel[] }) =>  {
+        this.isLoading = false;
+        this.widgetData = data;
+      } );
   }
 }
