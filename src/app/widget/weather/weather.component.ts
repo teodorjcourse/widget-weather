@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Weather } from '../../../models/widget.model';
+import { Weather } from '../../models/widget.model';
 
 @Component({
   selector: 'teo-weather',

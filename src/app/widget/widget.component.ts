@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WidgetModel } from '../../models/widget.model';
-import { WidgetService } from '../../common/services/widget.service';
+import { WidgetModel } from '../models/widget.model';
+import { WidgetService } from '../common/services/widget.service';
 
 @Component({
   selector: 'teo-widget',

@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { WidgetComponent } from './components/widget/widget.component';
-import { WeatherComponent } from './components/widget/weather/weather.component';
-import { SocialInfoComponent } from './components/widget/social/social-info.component';
-import { ContainerComponent } from './components/widget/container/container.component';
+import { WidgetComponent } from './widget/widget.component';
+import { WeatherComponent } from './widget/weather/weather.component';
+import { SocialInfoComponent } from './widget/social/social-info.component';
+import { ContainerComponent } from './widget/container/container.component';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FilterActivityPipe } from './pipes/filter-activity.pipe';
@@ -16,12 +16,17 @@ import { WidgetService } from './common/services/widget.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { API_ENDPOINT, API_ENDPOINT_TOKEN } from '../config';
+import { UnlessDirective } from './directives/unless.directive';
 
 const components = [
   ContainerComponent,
   SocialInfoComponent,
   WidgetComponent,
   WeatherComponent,
+];
+
+const directives = [
+  UnlessDirective
 ];
 
 const modules = [
@@ -48,7 +53,8 @@ const providers = [
   declarations: [
     AppComponent,
     ...components,
-    ...pipes
+    ...pipes,
+    ...directives
   ],
   imports: [
     ...modules

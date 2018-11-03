@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { WidgetModel } from '../../../models/widget.model';
+import { WidgetModel } from '../../models/widget.model';
 
 @Component({
   selector: 'teo-container',

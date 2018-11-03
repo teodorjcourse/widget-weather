@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SocialInfo } from '../../../models/widget.model';
+import { SocialInfo } from '../../models/widget.model';
 
 @Component({
   selector: 'teo-social',
