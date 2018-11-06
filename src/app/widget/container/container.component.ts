@@ -1,15 +1,16 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { WidgetModel } from '../../models/widget.model';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { AppState } from '../../store';
 import { ChooseActivityAction } from '../../store/actions/activity.action';
+import { widgetMediaDataSelector } from '../../store/selectors/widget-media.selector';
+import { IWidgetData } from '../../store/reducers/widget-media.reducer';
 
 @Component({
   selector: 'teo-container',
   templateUrl: './container.component.html'
 })
 export class ContainerComponent implements OnInit {
-  @Input()
   public widgetData: { [key: string]: WidgetModel[] };
   public selectedCategory: string;
 
@@ -18,7 +19,12 @@ export class ContainerComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.setCategory(Object.keys(this.widgetData)[0]);
+    this._store
+      .pipe(select(widgetMediaDataSelector))
+      .subscribe((data: IWidgetData) => {
+        this.widgetData = data;
+        this.setCategory(Object.keys(this.widgetData)[0]);
+      });
   }
 
   public onSelectCategory(category: string): void {
