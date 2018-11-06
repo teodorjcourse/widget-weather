@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { WidgetModel } from '../../models/widget.model';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../store';
+import { ChooseActivityAction } from '../../store/actions/activity.action';
 
 @Component({
   selector: 'teo-container',
@@ -8,11 +11,11 @@ import { WidgetModel } from '../../models/widget.model';
 export class ContainerComponent implements OnInit {
   @Input()
   public widgetData: { [key: string]: WidgetModel[] };
-  @Output()
-  public selectActivity: EventEmitter<WidgetModel> = new EventEmitter();
   public selectedCategory: string;
 
-  constructor() { }
+  constructor(
+    private _store: Store<AppState>
+  ) { }
 
   public ngOnInit(): void {
     this.setCategory(Object.keys(this.widgetData)[0]);
@@ -23,7 +26,7 @@ export class ContainerComponent implements OnInit {
   }
 
   public onSelectActivity(activity: WidgetModel): void {
-    this.selectActivity.emit(activity);
+    this._store.dispatch(new ChooseActivityAction(activity));
   }
 
   private setCategory(category: string): void {

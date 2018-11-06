@@ -17,6 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { API_ENDPOINT, API_ENDPOINT_TOKEN } from '../config';
 import { UnlessDirective } from './directives/unless.directive';
+import { StoreModule } from '@ngrx/store';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './store';
+import { EffectsModule } from '@ngrx/effects';
+import { WidgetMediaEffect } from './store/effects/widget-media.effect';
 
 const components = [
   ContainerComponent,
@@ -31,7 +37,14 @@ const directives = [
 
 const modules = [
   BrowserModule,
-  HttpClientModule
+  HttpClientModule,
+  EffectsModule.forRoot([WidgetMediaEffect]),
+  StoreModule.forRoot(reducers),
+  !environment.production ? StoreDevtoolsModule.instrument({
+    name: 'Widget weather DevTools',
+    maxAge: 15,
+    logOnly: environment.production
+  }) : []
 ];
 
 const pipes = [

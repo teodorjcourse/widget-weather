@@ -1,13 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocialInfo } from '../../models/widget.model';
+import { select, Store } from '@ngrx/store';
+import { AppState } from '../../store';
+import { socialSelector } from '../../store/selectors/activity.selector';
 
 @Component({
   selector: 'teo-social',
   templateUrl: './social-info.component.html'
 })
-export class SocialInfoComponent {
-  @Input()
+export class SocialInfoComponent implements OnInit {
   public info: SocialInfo;
 
-  constructor() { }
+  constructor(
+    private _store: Store<AppState>
+  ) { }
+
+  ngOnInit(): void {
+    this._store
+      .pipe(select(socialSelector))
+      .subscribe((info: SocialInfo) => this.info = info );
+  }
 }

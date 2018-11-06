@@ -5,12 +5,12 @@
 
   <ng-template #showContent>
     <div class="element-left">
-      <teo-container [widgetData] = "widgetData" (selectActivity) = "selectedActivity = $event"></teo-container>
+      <teo-container [widgetData] = "widgetData"></teo-container>
     </div>
 
     <div class="element-right">
-      <teo-weather [weather] = "selectedActivity.weather"></teo-weather>
-      <teo-social [info] = "selectedActivity.social_info"></teo-social>
+      <teo-weather></teo-weather>
+      <teo-social></teo-social>
     </div>
   </ng-template>
 
